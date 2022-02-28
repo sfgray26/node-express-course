@@ -3,11 +3,11 @@ const app = express();
 
 const mockUserData = [{ name: "Mark" }, { name: "Jill" }];
 
-app.get("/users", function (req, res) {
+app.get("/users/:id", function (req, res) {
   res.json({
     success: true,
     message: "successfully got users. Nice!",
-    users: mockUserData,
+    users: req.params.id,
   });
 });
 
